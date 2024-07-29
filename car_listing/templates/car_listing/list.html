@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Listings</title>
+</head>
+<body>
+    <h1>Lista samochodow z portalu Otomoto</h1>
+
+    <!-- Sortowanie -->
+    <p>
+        Sort by:
+        <a href="?sort_by=name&order=asc">Nazwa(A do Z)</a> |
+        <a href="?sort_by=name&order=desc">Name(Z do A)</a> |
+        <a href="?sort_by=price&order=asc">Cena(Rosnąco)</a> |
+        <a href="?sort_by=price&order=desc">Cena(Malejąco)</a> |
+        <a href="?sort_by=mileage&order=asc">Przebieg(Rosnąco)</a> |
+        <a href="?sort_by=mileage&order=desc">Przebieg(Malejąco)</a> |
+        <a href="?sort_by=year&order=asc">Rok(Rosnąco)</a> |
+        <a href="?sort_by=year&order=desc">Rok(Malejąco)</a>
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Cena</th>
+                <th>Przebieg</th>
+                <th>Rodzaj paliwa</th>
+                <th>Rok</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td><a href="{% url 'car_detail' car.id %}">{{ car.name }}</a></td>
+                <td>{{ car.price }} {{ car.price_currency }}</td>
+                <td>{{ car.mileage }}</td>
+                <td>{{ car.fuel_type }}</td>
+                <td>{{ car.year }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

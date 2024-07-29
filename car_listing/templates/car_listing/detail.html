@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ car.name }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ car.name }}</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Detale</h2>
+            <img src="{{ car.image_url }}" alt="{{ car.name }}" style="max-width: 600px; height: auto;">
+            <p><strong>Cena:</strong> {{ car.price }} {{ car.price_currency }}</p>
+            <p><strong>Przebied(km):</strong> {{ car.mileage }}</p>
+            <p><strong>Pojemność silnika:</strong> {{ car.engine_capacity }}</p>
+            <p><strong>Typ paliwa:</strong> {{ car.fuel_type }}</p>
+            <p><strong>Rok:</strong> {{ car.year }}</p>
+            <p><strong>Skrzynia biegow:</strong> {{ car.gearbox }}</p>
+            <p><strong>Konie mechaniczne:</strong> {{ car.horsepower }}</p>
+            <p><strong>Lokalizacja:</strong> {{ car.location }}</p>
+            <p><strong>Link do ogloszenia:</strong> <a href="{{ car.link }}" target="_blank">Wyswietl</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="{% url 'car_list' %}">Powrot do listy</a></p>
+    </footer>
+</body>
+</html>
