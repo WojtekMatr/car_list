@@ -1,0 +1,1 @@
+Projekt polegajacy na mapowaniu strony Otomoto do pliku csv oraz daty bazy sql. Jako ze Api Otomoto nie jest dostepna dla zwykłych użytkowników, postanowiłem stworzyć program który tworzy takie bazy danych do potencjalnej analizy rynku.
